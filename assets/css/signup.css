@@ -1,0 +1,345 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html,body{
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  background: #ecefeb;
+}
+::selection{
+  background: #41a900;
+  color: #fff;
+}
+.wrapper{
+  overflow: hidden;
+  max-width: 390px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 50px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+.wrapper .title-text{
+  display: flex;
+  width: 200%;
+}
+.wrapper .title{
+  width: 50%;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+/* Container for the profile image */
+.profile-image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px; /* Adjust space below the profile image */
+    
+  }
+  
+  .profile-image img {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  border: 2px solid rgb(255, 255, 255);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+}
+.wrapper .slide-controls{
+  position: relative;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  overflow: hidden;
+  margin: 30px 0 10px 0;
+  justify-content: space-between;
+  border: 1px solid lightgrey;
+  border-radius: 50px;
+}
+.slide-controls .slide{
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 48px;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.6s ease;
+}
+.slide-controls label.signup{
+  color: #000;
+}
+.slide-controls .slider-tab{
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 0;
+  z-index: 0;
+  border-radius: 50px;
+  background: #41a900;
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+input[type="radio"]{
+  display: none;
+}
+
+.field {
+  position: relative;
+  margin-bottom: 15px; /* Space between fields */
+}
+#signup:checked ~ .slider-tab{
+  left: 50%;
+}
+#signup:checked ~ label.signup{
+  color: #fff;
+  cursor: default;
+  user-select: none;
+}
+#signup:checked ~ label.login{
+  color: #41a900;
+}
+#login:checked ~ label.signup{
+  color: #41a900;
+}
+#login:checked ~ label.login{
+  cursor: default;
+  user-select: none;
+}
+.wrapper .form-container{
+  width: 100%;
+  overflow: hidden;
+}
+
+.form-container .form-inner{
+  display: flex;
+  width: 200%;
+}
+.form-container .form-inner form{
+  width: 50%;
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+.form-inner form .field{
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+}
+.form-inner form .field input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 40px;
+  border-radius: 50px;
+  border: 1px solid lightgrey;
+  border-bottom-width: 2px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.form-inner form .field input:focus{
+  border-color: #41a900;
+  /* box-shadow: inset 0 0 3px #fb6aae; */
+}
+.form-inner form .field input::placeholder{
+  color: #999;
+  transition: all 0.3s ease;
+}
+form .field input:focus::placeholder{
+  color: #b3b3b3;
+}
+
+#show-signup-password {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Space from the right side of the field */
+  transform: translateY(-50%); /* Center vertically */
+  color: #aaa; /* Icon color */
+  float: right;
+  text-align: right;
+  margin-top: 0px;
+	cursor: pointer;
+  margin-right: 10px;
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the icon */
+}
+#show-login-password {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Space from the right side of the field */
+  transform: translateY(-50%); /* Center vertically */
+  color: #aaa; /* Icon color */
+  float: right;
+  text-align: right;
+  margin-top: 0px;
+	cursor: pointer;
+  margin-right: 10px;
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the icon */
+}
+#show-confirm-signup-password {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Space from the right side of the field */
+  transform: translateY(-50%); /* Center vertically */
+  color: #aaa; /* Icon color */
+  float: right;
+  text-align: right;
+  margin-top: 0px;
+	cursor: pointer;
+  margin-right: 10px;
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the icon */
+}
+.pass-link a {
+  display: block; /* Make the link take up the entire line */
+  text-align: right; /* Align the forgot password link to the right */
+  margin-top: 10px; /* Space above the forgot password link */
+  color: #4CAF50; /* Color of the forgot password link */
+  text-decoration: none; /* Removes underline from the link */
+}
+.field input[type="text"],
+.field input[type="password"] {
+  width: 100%;
+  padding: 10px 40px; /* Adjust padding to prevent text overlap with the icons */
+  border-radius: 20px; /* Rounded corners for input fields */
+  border: 1px solid #ccc; /* Border color */
+  font-size: 16px; /* Font size for input fields */
+}
+.field i.fa-envelope {
+  left: 12px; /* Adjust the space from the left for the email icon */
+}
+.field i.fa-eye {
+  right: 12px; /* Adjust the space from the right for the eye icon */
+  cursor: pointer; /* Changes the cursor to a pointer when hovering over the icon */
+}
+.field input[type="text"] {
+  padding-left: 35px; /* Adjust left padding for text input */
+}
+
+.field input[type="password"] {
+  padding-right: 35px; /* Adjust right padding for password input */
+}
+
+.form-inner form .pass-link{
+  margin-top: 5px;
+}
+.form-inner form .signup-link{
+  text-align: center;
+  margin-top: 30px;
+  font-size:14px;
+}
+.form-inner form .pass-link a,
+.form-inner form .signup-link a{
+  color:#41a900;
+  text-decoration: none;
+  font-size:14px;
+}
+.form-inner form .pass-link a:hover,
+.form-inner form .signup-link a:hover{
+  text-decoration: underline;
+}
+.field i.fa {
+  position: absolute;
+  top: 50%;
+  left: 20px; /* Space from the left side of the field */
+  transform: translateY(-50%); /* Center vertically */
+  color: #aaa; /* Icon color */
+}
+form .btn{
+  height: 50px;
+  width: 100%;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+}
+form .btn .btn-layer{
+  height: 100%;
+  width: 300%;
+  position: absolute;
+  left: -100%;
+  background: #41a900;
+  border-radius: 50px;
+  transition: all 0.4s ease;;
+}
+form .btn:hover .btn-layer{
+  left: 0;
+}
+form .btn input[type="submit"]{
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  background: none;
+  border: none;
+  color: #fff;
+  padding-left: 0;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.separator {
+  margin: 20px 0;
+  border-top: 1px solid #CCCCCC;
+  position: relative;
+  text-align: center;
+}
+.socmed-login {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Align items vertically */
+  margin-top: 10px; /* Adjust as needed for spacing from the element above */
+}
+
+.socmed-btn {
+  width: 40px; /* Set a fixed width */
+  height: 40px; /* Set a fixed height */
+  display: flex;
+  align-items: center; /* Center the icon vertically */
+  justify-content: center; /* Center the icon horizontally */
+  margin-top: 5px; /* Spacing from the top */
+  text-align: center;
+  margin: 0 10px; /* Adjust the margin to set the desired spacing between icons */
+}
+
+.socmed-btn i.fa-brands {
+  color: #FFFFFF;
+  margin-left: -15px;
+}
+.socmed-login .socmed-btn {
+  padding: 10px 20px;
+  color: #FFFFFF;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 2px;
+  text-align: center;
+}
+.socmed-btn i.fa-brands {
+  width: 30px; /* Width for the icons */
+  height: 30px; /* Height for the icons */
+  line-height: 3px; /* Center the icon vertically */
+  text-align: center; /* Center the icon horizontally */
+  border-radius: 70%; /* Make it round */
+}
+.separator-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the element horizontally and vertically */
+  background: #FFFFFF;
+  color: #8a8a8a;
+  padding: 0 10px;
+}
+.x-icon {
+  float: right; /* This will align the .x-icon to the right */
+}
+
+.x-btn i.fa-solid {
+  color: #c0c0c0;
+  /* No inline style needed for color, it's better to keep it in the CSS file */
+}

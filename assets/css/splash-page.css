@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.splash-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    animation: logoAnimation 2s ease-out;
+}
+
+@keyframes logoAnimation {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
